@@ -19,30 +19,36 @@ abstract public class Calculator {
         System.out.println("2. Subtraction");
         System.out.println("3. Multiplication");
         System.out.println("4. divide");
-        System.out.println("Enter your choice ...");
-        int choice = sc.nextInt();
-        switch (choice){
-            case 1:
-                Addition ad = new Addition(first,second);
-                ad.evaluate();
-                ad.display();
-                break;
-            case 2:
-                Subtraction sb = new Subtraction(first,second);
-                sb.evaluate();
-                sb.display();
-                break;
-            case 3:
-                Multiplication ml = new Multiplication(first,second);
-                ml.evaluate();
-                ml.display();
-                break;
-            case 4 :
-                Devide dv = new Devide(first,second);
-                dv.evaluate();
-                dv.display();
-                break;
-        }
+        char ch='n';
+        do {
+            System.out.println("Enter your choice ...");
+            int choice = sc.nextInt();
+            switch (choice){
+                case 1:
+                    Addition ad = new Addition(first,second);
+                    ad.evaluate();
+                    ad.display();
+                    break;
+                case 2:
+                    Subtraction sb = new Subtraction(first,second);
+                    sb.evaluate();
+                    sb.display();
+                    break;
+                case 3:
+                    Multiplication ml = new Multiplication(first,second);
+                    ml.evaluate();
+                    ml.display();
+                    break;
+                case 4 :
+                    Devide dv = new Devide(first,second);
+                    dv.evaluate();
+                    dv.display();
+                    break;
+            }
+            System.out.println("Enter Y for continue....");
+            ch= sc.next().charAt(0);
+
+        }while (ch=='y' || ch=='Y');
     }
 }
 class Addition extends Calculator{
